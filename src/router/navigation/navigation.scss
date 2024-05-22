@@ -10,6 +10,7 @@
     box-shadow: 5px 5px 12px 0px rgba(255, 170, 80, 1);
 
     .logo-container {
+        cursor: pointer;
         display: grid;
         grid-template-columns: auto auto;
         grid-template-rows: 30px auto;
@@ -38,6 +39,7 @@
     }
 
     .nav-link {
+        cursor: pointer;
         font-weight: 600;
         width: 100px;
     }
