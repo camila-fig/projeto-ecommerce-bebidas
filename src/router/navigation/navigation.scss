@@ -1,0 +1,42 @@
+.navigation {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(245, 245, 245);
+    padding: 12px;
+    border-bottom: 1px solid #FFAA50;
+
+    .logo-container {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: 30px auto;
+        grid-template-areas:
+            "logo celebrar"
+            "logo casa";
+
+        .logo {
+            width: 50px;
+            padding: 5px;
+            grid-area: logo;
+        }
+
+        .celebrar-title {
+            font-family: "Rouge Script", cursive;
+            font-weight: 800;
+            font-style: normal;
+            font-size: 28px;
+            grid-area: celebrar;
+        }
+
+        .celebrar-subtitle {
+            font-size: 12px;
+            grid-area: casa;
+        }
+    }
+
+    .nav-link {
+        font-weight: 600;
+        width: 100px;
+    }
+}

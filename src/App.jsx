@@ -1,11 +1,10 @@
 import './App.scss'
+import { Navigation } from './router/navigation/navigation'
 
 export function App() {
   return (
     <>
-    <div>
-      Testando 1, 2, 3...
-    </div>
+    <Navigation/>
     </>
   )
 }
