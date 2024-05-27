@@ -1,4 +1,7 @@
 import logo from '../../assets/cheers-logo.svg'
+import nav_favorite from '../../assets/heart-bold.svg'
+import nav_login from '../../assets/sign-in-bold.svg'
+import nav_search from '../../assets/magnifying-glass-bold.svg'
 import { CartIcon } from '../../components/cart-icon/cart-icon'
 import './navigation.scss'
 
@@ -13,11 +16,20 @@ export function Navigation() {
                     <p className="celebrar-title">Celebrar</p>
                     <p className="celebrar-subtitle">Casa de Bebidas</p>
                 </div>
-                <div className="nav-link">BEBIDAS ALCOÓLICAS</div>
-                <div className="nav-link">BEBIDAS NÃO ALCOÓLICAS</div>
-                <div className="nav-link">LOGIN</div>
-                <div className="nav-link">FAVORITOS</div>
-                <CartIcon/>
+                <div className='nav-search'>
+                    <input className='nav-search-text' type="search" placeholder='o que está buscando hoje?' />
+                    <img className='nav-icon-search' src={nav_search} alt="" />
+                </div>
+                <div className="icon-container">
+                    <img className='nav-icon' src={nav_favorite} alt="" />
+                    <div className="nav-link">Favoritos</div>
+                </div>
+                <div className="icon-container">
+                    <img className='nav-icon' src={nav_login} alt="" />
+                    <div className="nav-link">Entrar</div>
+                </div>
+
+                <CartIcon />
             </div>
         </>
     )

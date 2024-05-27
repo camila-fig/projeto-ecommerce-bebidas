@@ -38,9 +38,47 @@
         }
     }
 
-    .nav-link {
-        cursor: pointer;
-        font-weight: 600;
-        width: 100px;
+    .nav-search {
+        width: 350px;
+        padding: 2px;
+        background-color: white;
+        border: 1px #47515b solid;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+
+        .nav-search-text {
+            width: 300px;
+            border: none;            
+        }
+
+        input::placeholder {
+            color: lightgray;
+          }
+
+        .nav-icon-search {
+            width: 25px;
+            cursor: pointer;
+        }
     }
+
+    .icon-container {
+        cursor: pointer;
+        width: 100px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .nav-icon {
+            width: 25px;
+        }
+
+        .nav-link {
+            cursor: pointer;
+            font-weight: 600;
+            width: 100px;
+        }
+    }
+
+
 }
