@@ -162,7 +162,7 @@ export const SHOP_DATA = [
             },
             {
                 id: 32,
-                name: 'Xarope Monin de Cranberry',
+                name: 'Xarope Monin de Cranberry 700 ml',
                 image: '../src/assets/monin.png',
                 price: 69.95,
                 promotionPrice: 52.46,
