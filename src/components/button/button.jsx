@@ -30,7 +30,7 @@ export function ButtonBuy() {
 
     return (
         <div className='button-buy-container'>
-            <button className='button-add-remove' onClick={reduce}>-</button>
+            <button className='button-add-remove' onClick={reduce} disabled={number === 0}>-</button>
             <p className='button-result'>{number}</p >
             <button className='button-add-remove' onClick={add}>+</button>
         </div>
