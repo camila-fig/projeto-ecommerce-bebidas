@@ -26,36 +26,3 @@ button {
         background-color: #eb861c;
     }
 }
-
-.button-buy-container {
-    display: flex;
-    width: 100%;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    
-    .button-result {
-        width: 50%;
-        height: 100%;
-        background-color: white;
-        color: #47515b;
-        border: solid 1px lightgray;
-        border-radius: 5px;
-        padding: 7px;
-
-        &:hover {
-            background-color: #ffaa50;
-        }
-    }
-
-    .button-add-remove {
-        width: 25%;
-        background-color: white;
-        color: #47515b;
-        border: solid 1px lightgray;
-
-        &:hover {
-            background-color: #ffaa50;
-        }
-    }
-}

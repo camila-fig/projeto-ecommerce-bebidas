@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './button.scss'
 
 const BUTTON_TYPE_CLASS = {
@@ -13,26 +12,5 @@ export function Button({ children, typeButton, ...otherProps }) {
             className={`${BUTTON_TYPE_CLASS[typeButton]}`}>
             {children}
         </button >
-    )
-}
-
-
-export function ButtonBuy() {
-
-    const [number, setNumber] = useState(0)
-
-    function add() {
-        setNumber(number + 1)
-    }
-    function reduce() {
-        setNumber(number - 1)
-    }
-
-    return (
-        <div className='button-buy-container'>
-            <button className='button-add-remove' onClick={reduce} disabled={number === 0}>-</button>
-            <p className='button-result'>{number}</p >
-            <button className='button-add-remove' onClick={add}>+</button>
-        </div>
     )
 }
