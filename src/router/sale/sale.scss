@@ -1,0 +1,38 @@
+.sale-container {
+    background-image: linear-gradient(#ffaa50, white, #ffaa50);
+    padding-right: 40px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-areas:
+        'title form-input button'
+        'subtitle form-input button'
+    ;
+
+    .title {
+        grid-area: title;
+        padding: 20px 0 5px 20px;
+    }
+
+    .sale-subtitle {
+        font-size: 13px;
+        margin-left: 40px;
+        grid-area: subtitle;
+        padding-bottom: 20px;
+    }
+
+    .form-container {
+        display: flex;
+        flex-direction: row;
+        justify-self: center;
+        gap: 40px;
+
+        .form-input-container {
+            grid-area: form-input;
+        }
+    }
+
+    .sale-button {
+        grid-area: button;
+    }
+}

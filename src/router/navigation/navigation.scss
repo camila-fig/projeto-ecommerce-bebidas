@@ -5,9 +5,10 @@
     justify-content: space-around;
     background-color: rgb(245, 245, 245);
     padding: 12px;
-    -webkit-box-shadow: 5px 5px 12px 0px rgba(255, 170, 80, 1);
-    -moz-box-shadow: 5px 5px 12px 0px rgba(255, 170, 80, 1);
-    box-shadow: 5px 5px 12px 0px rgba(255, 170, 80, 1);
+    position: fixed;
+    top: 0px;
+
+    width: 100%;
 
     .logo-container {
         cursor: pointer;
