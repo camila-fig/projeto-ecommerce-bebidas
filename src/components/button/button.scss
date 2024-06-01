@@ -3,14 +3,60 @@ button {
     flex-direction: row;
     cursor: pointer;
     text-transform: uppercase;
+    justify-content: center;
     padding: 2px;
-    font-weight: 600;
-    width: 200px;
+    font-weight: 800;
+    width: 100%;
     background-color: #ffaa50;
     color: white;
-    border: none;
+    border: solid 1px #ffaa50;
+    border-radius: 5px;
+    padding: 10px;
 
     &.google-sign-in {
+        border: solid 1px #4285f4;
         background-color: #4285f4;
+
+        &:hover {
+            background-color: #1663de;
+        }
+    }
+
+    &:hover {
+        background-color: #eb861c;
+    }
+}
+
+
+
+.button-buy-container {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    
+    .button-result {
+        width: 50%;
+        height: 100%;
+        background-color: white;
+        color: #47515b;
+        border: solid 1px lightgray;
+        border-radius: 5px;
+
+        &:hover {
+            background-color: #ffaa50;
+        }
+    }
+
+    .button-add-remove {
+        width: 25%;
+        background-color: white;
+        color: #47515b;
+        border: solid 1px lightgray;
+
+        &:hover {
+            background-color: #ffaa50;
+        }
     }
 }

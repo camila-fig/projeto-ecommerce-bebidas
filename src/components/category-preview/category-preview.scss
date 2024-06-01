@@ -1,0 +1,11 @@
+.category-preview-container {
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+  
+    .preview {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 20px;
+    }
+  }
