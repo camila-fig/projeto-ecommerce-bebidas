@@ -7,7 +7,6 @@
     padding: 12px;
     position: fixed;
     top: 0px;
-
     width: 100%;
 
     .logo-container {
@@ -50,12 +49,12 @@
 
         .nav-search-text {
             width: 300px;
-            border: none;            
+            border: none;
         }
 
         input::placeholder {
             color: lightgray;
-          }
+        }
 
         .nav-icon-search {
             width: 25px;

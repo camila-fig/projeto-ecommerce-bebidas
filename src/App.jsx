@@ -10,7 +10,6 @@ export function App() {
     <>
     <Navigation/>
     <Home />
-    <h4 className='title'>OFERTAS DO MÊS</h4>
     <Shop />
     <Sale />
     {/* <Auth /> */}
