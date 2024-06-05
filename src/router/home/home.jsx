@@ -13,8 +13,11 @@ const categories = [
 
 export function Home() {
 return (
+    <>
     <div>
     <Categories categories={categories} />
     </div>
+    <Sale />
+    </>
 )    
 }
