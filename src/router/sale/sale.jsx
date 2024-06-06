@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import './sale.scss'
 import { FormInput } from '../../components/form-input/form-input'
 import { Button } from '../../components/button/button'
+import './sale.scss'
 
 const defaultFormFields = {
     nome: "",

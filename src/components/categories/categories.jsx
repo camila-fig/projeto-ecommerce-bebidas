@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom"
 import { Category } from "../category/category"
 import './categories.scss'
 
@@ -7,7 +8,9 @@ export function Categories( { categories}) {
            {
             categories.map((category) => {
                 return (
+                    <NavLink to={`shop/${category.title}`}>
                     <Category category={category} key={category.title} />
+                    </NavLink>
                 )
             })
            }

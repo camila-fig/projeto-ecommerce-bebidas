@@ -1,4 +1,5 @@
-import { Categories } from "../../components/categories/categories"
+import { Sale } from "../sale/sale"
+import { CategoriesPreview } from "../../components/categories-preview/categories-preview"
 
 const categories = [
     {
@@ -14,9 +15,8 @@ const categories = [
 export function Home() {
 return (
     <>
-    <div>
-    <Categories categories={categories} />
-    </div>
+    <h4 className='categories-preview-title'>MAIS VENDIDOS</h4>
+    <CategoriesPreview />
     <Sale />
     </>
 )    

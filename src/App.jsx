@@ -1,10 +1,9 @@
-import { Route, Routes } from 'react-router-dom'
 import './App.scss'
+import { Route, Routes } from 'react-router-dom'
 import { Auth } from './router/auth/auth'
-import { Home } from './router/home/home'
 import { Navigation } from './router/navigation/navigation'
-import { Sale } from './router/sale/sale'
 import { Shop } from './router/shop/shop'
+import { Home } from './router/home/home'
 
 export function App() {
   return (

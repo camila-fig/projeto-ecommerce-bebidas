@@ -1,10 +1,22 @@
+import './navigation.scss'
 import logo from '../../assets/cheers-logo.svg'
 import nav_favorite from '../../assets/heart-bold.svg'
 import nav_login from '../../assets/sign-in-bold.svg'
 import nav_search from '../../assets/magnifying-glass-bold.svg'
 import { CartIcon } from '../../components/cart-icon/cart-icon'
-import './navigation.scss'
 import { NavLink, Outlet } from 'react-router-dom'
+import { Categories } from '../../components/categories/categories'
+
+const categories = [
+    {
+        "id": 1,
+        "title": "BEBIDAS ALCOÓLICAS"
+    },
+    {
+        "id": 2,
+        "title": "BEBIDAS NÃO ALCOÓLICAS"
+    }
+]
 
 export function Navigation() {
     return (
@@ -31,6 +43,7 @@ export function Navigation() {
                 </NavLink>
                 <CartIcon />
             </div>
+            <Categories categories={categories} />
             <Outlet />
         </>
     )
