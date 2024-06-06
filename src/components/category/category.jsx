@@ -7,5 +7,6 @@ export function Category( {category} ) {
         <div className="category-container">        
                 <p>{title}</p>        
         </div>
+        
     )
 }
