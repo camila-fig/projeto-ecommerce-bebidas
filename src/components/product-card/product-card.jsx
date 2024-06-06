@@ -1,7 +1,6 @@
+import './product-card.scss'
 import { Button } from "../button/button"
 import { ItemCount } from "../item-count/item-count"
-import './product-card.scss'
-
 
 export function ProductCard({ product }) {
 
@@ -16,7 +15,7 @@ export function ProductCard({ product }) {
         <p className='product-promotion-price'>Por R$ {promotionPrice.toFixed(2).toString().replace(".", ",")}</p>
       </div>
       <div className="product-buttons">
-      <ItemCount></ItemCount>
+      <ItemCount />
       <Button typeButton="inverted">Comprar</Button>
       </div>
     </div>
