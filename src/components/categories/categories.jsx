@@ -8,7 +8,7 @@ export function Categories( { categories}) {
            {
             categories.map((category) => {
                 return (
-                    <NavLink to={`shop/${category.title}`}>
+                    <NavLink to={`shop/${category.title.toLowerCase()}`}>
                     <Category category={category} key={category.title} />
                     </NavLink>
                 )

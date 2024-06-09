@@ -1,0 +1,14 @@
+.category-shopp {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding-bottom: 15px;
+    margin: 0 70px 0 70px;
+    background-color: white;
+}
+
+.category-title {
+    text-transform: capitalize;
+    padding: 20px 70px 20px 70px;
+    font-size: 20px;
+    font-weight: 600;
+}
