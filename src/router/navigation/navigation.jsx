@@ -6,6 +6,9 @@ import nav_search from '../../assets/magnifying-glass-bold.svg'
 import { CartIcon } from '../../components/cart-icon/cart-icon'
 import { NavLink, Outlet } from 'react-router-dom'
 import { Categories } from '../../components/categories/categories'
+import { CartDropdown } from '../../components/cart-dropdown/cart-dropdown'
+import { useContext } from 'react'
+import { CartContext } from '../../context/cartContext'
 
 const categories = [
     {
@@ -19,6 +22,10 @@ const categories = [
 ]
 
 export function Navigation() {
+
+    // Para abrir o modal do carrinho.
+    const { isCartOpen } = useContext(CartContext) 
+
     return (
         <>
             <div className="navigation">
@@ -43,6 +50,7 @@ export function Navigation() {
                 </NavLink>
                 <CartIcon />
             </div>
+           { isCartOpen && <CartDropdown />}
             <Categories categories={categories} />
             <Outlet />
         </>
