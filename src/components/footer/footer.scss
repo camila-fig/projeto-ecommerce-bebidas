@@ -1,0 +1,58 @@
+.footer-container {
+    padding: 0 70px 30px 70px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "adv adv"
+        "pgto idt";
+    justify-items: center;
+
+    @keyframes fa-blink {
+        0% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 0.5;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+
+    .category-warning {
+        text-align: center;
+        font-size: 20px;
+        padding: 15px;
+        color: #eb961c;
+        -webkit-animation: fa-blink .75s linear infinite;
+        -moz-animation: fa-blink .75s linear infinite;
+        -ms-animation: fa-blink .75s linear infinite;
+        -o-animation: fa-blink .75s linear infinite;
+        animation: fa-blink .75s linear infinite;
+        grid-area: adv;
+    }
+
+    .footer-payment {
+        grid-area: pgto;
+        width: 80%;
+
+        .payment-logo {
+            width: 80px;
+            padding: 10px;
+            border-radius: 15px;
+        }
+    }
+
+    .footer-identification {
+        grid-area: idt;
+    }
+
+    .footer-title {
+        font-weight: 600;
+        text-align: center;
+        padding-bottom: 15px;
+    }
+}
