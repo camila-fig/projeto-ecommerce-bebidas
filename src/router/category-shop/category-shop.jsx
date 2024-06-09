@@ -1,30 +1,19 @@
 import "./category-shop.scss"
 import { useParams } from "react-router-dom"
-import { useEffect, useState } from "react"
-import { getCategoriesAndDocuments } from "../../utils/firebase"
+import { useContext, useEffect, useState } from "react"
 import { ProductCard } from "../../components/product-card/product-card"
+import { CategoriesContext } from "../../context/categoriesContext"
 
 
 export function CategoryShop() {
     const { category } = useParams()
 
-    const [categoriesMap, setCategoriesMap] = useState({})
+    const { categoriesMap } = useContext(CategoriesContext)
     const [products, setProducts] = useState(categoriesMap[category])
-
-    useEffect(() => {
-        const getCategories = async () => {
-            const categoryMap = await getCategoriesAndDocuments()
-            setCategoriesMap(categoryMap)
-        }
-        getCategories()
-    }, [])
 
     useEffect(() => {
         setProducts(categoriesMap[category])
     }, [category, categoriesMap])
-
-    // console.log(category)
-    //  console.log(products)
 
     return (
         <>

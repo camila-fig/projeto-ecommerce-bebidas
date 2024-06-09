@@ -1,31 +1,18 @@
-import { useEffect, useState } from "react"
-import { addCollentionAdDocuments, getCategoriesAndDocuments } from "../../utils/firebase"
+import { useContext } from "react"
 import { CategoryPreview } from "../category-preview/category-preview"
-import { SHOP_DATA } from "../../shop-data"
+import { CategoriesContext } from "../../context/categoriesContext"
+
 
 
 export function CategoriesPreview() {
-
-  const [categories, setCategories] = useState({})
-
-  // useEffect(() => {
-  //   addCollentionAdDocuments('categories', SHOP_DATA)
-  // }, [])
-
-  useEffect(() => {
-    const getCategories = async () => {
-      const category = await getCategoriesAndDocuments()
-      setCategories(category)
-    }
-
-    getCategories()
-  }, [])
+ const { categoriesMap } = useContext(CategoriesContext)
+ 
 
   return (
     <>
       {
-        Object.keys(categories).map(title => {
-          const products = categories[title]
+        Object.keys(categoriesMap).map(title => {
+          const products = categoriesMap[title]
           return <CategoryPreview key={title} title={title} products={products} />
         })
       }
