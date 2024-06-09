@@ -144,7 +144,7 @@ export const SHOP_DATA = [
             },
             {
                 id: 31,
-                name: 'Água de Coco Esterilizada Kero Coco 1000 ml',
+                name: 'Água de Coco Esterilizada Kero Coco 1 l',
                 image: '../src/assets/kero-coco.png',
                 price: 14.95,
                 promotionPrice: 11.21,
