@@ -102,15 +102,6 @@ export const SHOP_DATA = [
                 stock: 74
             },
             {
-                id: 12,
-                name: 'Sake Gekkeikan 750 ml',
-                image: '../src/assets/saque-gek',
-                price: 79.97,
-                promotionPrice: 60.00,
-                classification: 'Saquê',
-                stock: 28
-            },
-            {
                 id: 13,
                 name: 'Cerveja Heineken Long Neck 330 ml',
                 image: '../src/assets/heineken.png',
