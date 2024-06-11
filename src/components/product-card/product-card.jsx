@@ -1,10 +1,15 @@
 import './product-card.scss'
 import { Button } from "../button/button"
 import { ItemCount } from "../item-count/item-count"
+import { useContext } from 'react'
+import { CartContext } from '../../context/cartContext'
 
 export function ProductCard({ product }) {
 
   const { name, price, promotionPrice, image } = product
+  const { addItemToCart } = useContext(CartContext)
+
+  const addProductToCart = () => addItemToCart(product)
 
   return (
     <div className='product-card-container'>
@@ -16,7 +21,7 @@ export function ProductCard({ product }) {
       </div>
       <div className="product-buttons">
       <ItemCount />
-      <Button typeButton="inverted">Comprar</Button>
+      <Button typeButton="inverted" onClick={addProductToCart}>Comprar</Button>
       </div>
     </div>
   )

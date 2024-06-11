@@ -13,28 +13,28 @@
         font-size: 14px;
 
         .cart-item-image {
-            width: 20%;
+            width: 10%;
         }
 
         .cart-item-details {
-            width: 80%;
+            width: 90%;
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: start;
 
             .cart-item-name {
-                width: 45%;
+                width: 40%;
             }
 
             .cart-item-price {
-                width: 45%;
+                width: 40%;
                 padding-left: 10px;
                 padding-right: 10px;
             }
 
             .cart-item-quantity {
-                width: 10%;
+                width: 20%;
             }
         }
     }
