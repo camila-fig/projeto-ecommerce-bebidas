@@ -1,4 +1,5 @@
 import { initializeApp } from "firebase/app";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, signInWithPopup } from "firebase/auth";
 import { collection, doc, getDocs, getFirestore, query, writeBatch } from 'firebase/firestore'
 
 const firebaseConfig = {
@@ -29,12 +30,30 @@ export const addCollentionAdDocuments = async (collentionKey, objectsToAdd) => {
 export const getCategoriesAndDocuments = async () => {
   const collectionRef = collection(db, 'categories')
   const q = query(collectionRef)
-  
+
   const querySnapShot = await getDocs(q)
-  const categoryMap  = querySnapShot.docs.reduce((acc, docSnapShot) => {
+  const categoryMap = querySnapShot.docs.reduce((acc, docSnapShot) => {
     const { title, items } = docSnapShot.data()
     acc[title.toLowerCase()] = items
     return acc
   }, {})
+
   return categoryMap
+}
+
+//Importar o provedor (tem na documentação do firebase)
+const googleProvider = new GoogleAuthProvider()
+googleProvider.setCustomParameters({
+  prompt: 'select_account'
+})
+
+export const auth = getAuth()
+export const signInWithGooglePopup = () => signInWithPopup(auth, googleProvider)
+
+
+//Para cadastrar email e senha
+export const createAuthUserWithEmailPassword = async(email, password) => {
+  if (!email || !password) return
+
+  return await createUserWithEmailAndPassword(auth, email, password)
 }

@@ -1,7 +1,8 @@
+import './sign-in.scss'
 import { useState } from "react";
 import { Button } from "../button/button";
 import { FormInput } from "../form-input/form-input";
-import './sign-in.scss'
+import { signInWithGooglePopup } from "../../utils/firebase";
 
 const defaultFormFields = {
     email: "",
@@ -22,6 +23,12 @@ export function SingIn() {
         event.preventDefault()
         setFormFilds(defaultFormFields)
     }
+
+//Chamar a função do Firebase para logar com Google
+const signInWithGoogle = async () => {
+await signInWithGooglePopup()
+}
+
 
     return (
         <div>
@@ -49,7 +56,7 @@ export function SingIn() {
                 <Button type="submit">
                     Entrar
                 </Button>
-                <Button type="button" typeButton="google">
+                <Button type="button" typeButton="google" onClick={signInWithGoogle}>
                     Entrar com conta Google
                 </Button>
             </form>

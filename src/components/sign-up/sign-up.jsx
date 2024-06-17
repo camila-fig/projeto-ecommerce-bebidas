@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "../button/button";
 import { FormInput } from "../form-input/form-input";
+import { createAuthUserWithEmailPassword } from "../../utils/firebase";
 
 const defaultFormFields = {
     nome: "",
@@ -25,6 +26,19 @@ export function SingUp() {
             alert("As senhas digitadas não são iguais")
             return
         }
+
+
+        //Para chamar a função de logar com email e senha
+        try {
+            //processo de criar conta
+            const { user } = createAuthUserWithEmailPassword(email, senha)
+            console.log(user)
+        } catch (erro) {
+            console.log("erro", erro)
+        }
+
+        //Mostra os dados do usuário novo no console
+        // console.log(formFilds)
         setFormFilds(defaultFormFields)
     }
 
