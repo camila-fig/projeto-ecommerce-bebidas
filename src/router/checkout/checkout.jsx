@@ -5,39 +5,23 @@ import { CheckoutItem } from '../../components/checkout-item/checkout-item'
 
 export function Checkout() {
 
-    const {cartItems, cartTotal} = useContext(CartContext)
+    const { cartItems, cartTotal } = useContext(CartContext)
 
     return (
-    <div>
-        <div className='checkout-header'>
-            <div>
+        <div className='checkout-container'>
+            <div className='checkout-header'>
                 <span>Produto</span>
-            </div>
-        </div>
-        <div>
-            <div>
                 <span>Descrição</span>
-            </div>
-        </div>
-        <div>
-            <div>
                 <span>Quantidade</span>
-            </div>
-        </div>
-        <div>
-            <div>
                 <span>Preço</span>
-            </div>
-        </div>
-        <div>
-            <div>
                 <span>Remover</span>
             </div>
-        </div>
-        {
-cartItems.map((cartItem) => <CheckoutItem cartItem={cartItem} key={cartItem.id} />)
-        }
-        <span>Total: R${cartTotal}</span>
-    </div>
+            <div className='checkout-container-total'>
+                {
+                    cartItems.map((cartItem) => <CheckoutItem cartItem={cartItem} key={cartItem.id} />)
+                }
+                <span className='checkout-total'> TOTAL: R$ {cartTotal.toFixed(2).toString().replace(".", ",")}</span >
+            </div>
+        </div >
     )
 }

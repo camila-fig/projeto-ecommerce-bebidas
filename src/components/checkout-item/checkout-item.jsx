@@ -11,22 +11,22 @@ export function CheckoutItem({ cartItem }) {
     const removeItem = () => removeItemToCart(cartItem)
 
     return (
-        <div>
-            <div>
+        <div className='checkout-item-container'>
+            <div className='checkout-item-image'>
                 <img src={image} alt="" />
             </div>
-            <span>{name}</span>
-            <span>
-                <div onClick={removeItem}>
+            <span className='checkout-item-name'>{name}</span>
+            <span className='checkout-quantity'>
+                <span className='checkout-item-arrow' onClick={removeItem}>
                     &#10094;
-                </div>
-                <span>{quantity}</span>
-                <div onClick={addItem}>
+                </span>
+                <span className='checkout-item-quantity'>{quantity}</span>
+                <span className='checkout-item-arrow' onClick={addItem}>
                     &#10095;
-                </div>
+                </span>
             </span>
-            <span>{promotionPrice}</span>
-            <div onClick={clearItem}>
+            <span className='checkout-item-total'>{promotionPrice.toFixed(2).toString().replace(".", ",")}</span>
+            <div className='checkout-item-remove' onClick={clearItem}>
                 &#10005;
             </div>
         </div>
