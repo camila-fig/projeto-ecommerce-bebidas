@@ -13,14 +13,16 @@ export function Checkout() {
                 <span>Produto</span>
                 <span>Descrição</span>
                 <span>Quantidade</span>
-                <span>Preço</span>
+                <span>Subtotal</span>
                 <span>Remover</span>
             </div>
             <div className='checkout-container-total'>
                 {
                     cartItems.map((cartItem) => <CheckoutItem cartItem={cartItem} key={cartItem.id} />)
                 }
-                <span className='checkout-total'> TOTAL: R$ {cartTotal.toFixed(2).toString().replace(".", ",")}</span >
+                <div className='checkout-total'>
+                <span className='checkout-total-value'> TOTAL: R$ {cartTotal.toFixed(2).toString().replace(".", ",")}</span >
+                </div>
             </div>
         </div >
     )

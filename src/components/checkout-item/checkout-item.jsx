@@ -5,6 +5,7 @@ import { CartContext } from "../../context/cartContext";
 export function CheckoutItem({ cartItem }) {
     const { clearItemToCart, addItemToCart, removeItemToCart } = useContext(CartContext)
     const { image, name, promotionPrice, quantity } = cartItem
+    const subtotal = quantity*promotionPrice
 
     const clearItem = () => clearItemToCart(cartItem)
     const addItem = () => addItemToCart(cartItem)
@@ -25,7 +26,7 @@ export function CheckoutItem({ cartItem }) {
                     &#10095;
                 </span>
             </span>
-            <span className='checkout-item-total'>{promotionPrice.toFixed(2).toString().replace(".", ",")}</span>
+            <span className='checkout-item-total'>R$ {subtotal.toFixed(2).toString().replace(".", ",")}</span>
             <div className='checkout-item-remove' onClick={clearItem}>
                 &#10005;
             </div>
