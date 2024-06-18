@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Button } from "../button/button";
 import { FormInput } from "../form-input/form-input";
-import { createAuthUserWithEmailPassword } from "../../utils/firebase";
+import { createAuthUserWithEmailPassword, createUserDocumentFromAuth } from "../../utils/firebase";
 
 const defaultFormFields = {
-    nome: "",
+    displayName: "",
     email: "",
     senha: "",
     confirmeSenha: ""
@@ -13,14 +13,14 @@ const defaultFormFields = {
 export function SingUp() {
 
     const [formFilds, setFormFilds] = useState(defaultFormFields)
-    const { nome, email, senha, confirmeSenha } = formFilds
+    const { displayName, email, senha, confirmeSenha } = formFilds
 
     const handleChange = (event) => {
         const { name, value } = event.target
         setFormFilds({ ...formFilds, [name]: value })
     }
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault()
         if (senha !== confirmeSenha) {
             alert("As senhas digitadas não são iguais")
@@ -31,15 +31,26 @@ export function SingUp() {
         //Para chamar a função de logar com email e senha
         try {
             //processo de criar conta
-            const { user } = createAuthUserWithEmailPassword(email, senha)
+            const { user } = await createAuthUserWithEmailPassword(email, senha)
+            await createUserDocumentFromAuth(user, { displayName })
             console.log(user)
+            setFormFilds(defaultFormFields)
+            alert("Sua conta foi cadastrada com sucesso\nVocê será direcionado para página inicial.")
+            // setTimeout(function () {
+            //     window.location.href = "../../";
+            // }, 1000);
+
+            //caso der erro
         } catch (erro) {
-            console.log("erro", erro)
+            if (erro.code === 'auth/email-already-in-use') {
+                alert("E-mail já cadastrado")
+            } else {
+                console.log("erro", erro)
+            }
         }
 
         //Mostra os dados do usuário novo no console
-        // console.log(formFilds)
-        setFormFilds(defaultFormFields)
+        // console.log(formFilds)        
     }
 
     return (
@@ -50,11 +61,11 @@ export function SingUp() {
                     label="Nome"
                     type="text"
                     requeried
-                    name="nome"
+                    name="displayName"
                     placeholder="digite seu nome"
                     autocomplete="off"
                     onChange={handleChange}
-                    value={nome}
+                    value={displayName}
                 />
                 <FormInput
                     label="E-mail"

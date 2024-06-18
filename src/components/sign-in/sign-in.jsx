@@ -2,7 +2,7 @@ import './sign-in.scss'
 import { useState } from "react";
 import { Button } from "../button/button";
 import { FormInput } from "../form-input/form-input";
-import { signInWithGooglePopup } from "../../utils/firebase";
+import { signInAuthUserWithEmailPassword, signInWithGooglePopup } from "../../utils/firebase";
 
 const defaultFormFields = {
     email: "",
@@ -19,15 +19,24 @@ export function SingIn() {
         setFormFilds({ ...formFilds, [name]: value })
     }
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault()
+        //Para logar com email e senha já cadastrado
+        try {
+            const { user } = await signInAuthUserWithEmailPassword(email, senha)
+            console.log(user)
+        } catch (e) {
+            console.log(e)
+        }
+
+        // console.log(formFilds)
         setFormFilds(defaultFormFields)
     }
 
-//Chamar a função do Firebase para logar com Google
-const signInWithGoogle = async () => {
-await signInWithGooglePopup()
-}
+    //Chamar a função do Firebase para logar com Google
+    const signInWithGoogle = async () => {
+        await signInWithGooglePopup()
+    }
 
 
     return (

@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
-import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, signInWithPopup } from "firebase/auth";
-import { collection, doc, getDocs, getFirestore, query, writeBatch } from 'firebase/firestore'
+import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { collection, doc, getDoc, getDocs, getFirestore, query, setDoc, writeBatch } from 'firebase/firestore'
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_API_KEY,
@@ -52,8 +52,43 @@ export const signInWithGooglePopup = () => signInWithPopup(auth, googleProvider)
 
 
 //Para cadastrar email e senha
-export const createAuthUserWithEmailPassword = async(email, password) => {
+export const createAuthUserWithEmailPassword = async (email, password) => {
   if (!email || !password) return
 
   return await createUserWithEmailAndPassword(auth, email, password)
+}
+
+
+//Para criar a coleção de usuários
+export const createUserDocumentFromAuth = async (userAuth, informacoesAdicionais = {}) => {
+  if (!userAuth) return
+
+  const userDocRef = doc(db, 'users', userAuth.uid)
+  const userSnapShot = await getDoc(userDocRef)
+
+  if (!userSnapShot.exists()) {
+    const { displayName, email } = userAuth
+    const createdAt = new Date()
+
+    try {
+      await setDoc(userDocRef, {
+        displayName,
+        email,
+        createdAt,
+        ...informacoesAdicionais
+      })
+    } catch (e) {
+      console.log(e.message)
+    }
+  }
+
+  return userDocRef
+}
+
+
+//Para entrar com login e senha depois de já ter cadastrado
+export const signInAuthUserWithEmailPassword = async (email, password) => {
+  if (!email || !password) return
+
+  return await signInWithEmailAndPassword(auth, email, password)
 }
