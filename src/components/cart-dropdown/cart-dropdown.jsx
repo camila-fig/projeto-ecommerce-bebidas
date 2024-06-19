@@ -4,15 +4,25 @@ import { CartItem } from "../cart-item/cart-item"
 import { useContext } from "react"
 import { CartContext } from "../../context/cartContext"
 import { useNavigate } from "react-router-dom"
+import Empty from "../../assets/beer-bottle.png"
 
 export function CartDropdown() {
 
-    const { cartItems } = useContext(CartContext)
+    const { cartItems, cartCount } = useContext(CartContext)
     const navigate = useNavigate()
     const goToCheckout = () => {
         navigate('/checkout')
     }
 
+if (!cartCount) {
+    return (
+        <div className="cart-dropdown-container-empty">
+        <img className="cart-dropdown-image-empty" src={Empty} alt="Carrinho vazio" />
+        <p>Seu carrinho de compras está vazio.</p>
+        <p>Adicione produtos.</p>
+        </div>
+    )
+} else {
     return (
         <div className="cart-dropdown-container">
             <p className="cart-dropdown-title">Seu carrinho:</p>
@@ -32,5 +42,5 @@ export function CartDropdown() {
                 <Button onClick={goToCheckout}>Finalizar</Button>
             </div>
         </div>
-    )
+    )}
 }
