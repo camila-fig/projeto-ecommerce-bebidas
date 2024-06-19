@@ -36,9 +36,9 @@ export function SingUp() {
             console.log(user)
             setFormFilds(defaultFormFields)
             alert("Sua conta foi cadastrada com sucesso\nVocê será direcionado para página inicial.")
-            // setTimeout(function () {
-            //     window.location.href = "../../";
-            // }, 1000);
+            setTimeout(function () {
+                window.location.href = "../../";
+            }, 1000);
 
             //caso der erro
         } catch (erro) {
