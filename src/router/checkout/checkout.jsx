@@ -2,12 +2,14 @@ import './checkout.scss'
 import { useContext } from 'react'
 import { CartContext } from '../../context/cartContext'
 import { CheckoutItem } from '../../components/checkout-item/checkout-item'
+import { Footer } from '../../components/footer/footer'
 
 export function Checkout() {
 
     const { cartItems, cartTotal } = useContext(CartContext)
 
     return (
+        <>
         <div className='checkout-container'>
             <div className='checkout-header'>
                 <span>Produto</span>
@@ -25,5 +27,7 @@ export function Checkout() {
                 </div>
             </div>
         </div >
+        <Footer />
+        </>
     )
 }
