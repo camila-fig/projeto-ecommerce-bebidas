@@ -1,11 +1,12 @@
 import './checkout-item.scss'
 import { useContext } from "react";
 import { CartContext } from "../../context/cartContext";
+import Remove from "../../assets/lixeira-de-reciclagem.png"
 
 export function CheckoutItem({ cartItem }) {
     const { clearItemToCart, addItemToCart, removeItemToCart } = useContext(CartContext)
     const { image, name, promotionPrice, quantity } = cartItem
-    const subtotal = quantity*promotionPrice
+    const subtotal = quantity * promotionPrice
 
     const clearItem = () => clearItemToCart(cartItem)
     const addItem = () => addItemToCart(cartItem)
@@ -28,7 +29,7 @@ export function CheckoutItem({ cartItem }) {
             </span>
             <span className='checkout-item-total'>R$ {subtotal.toFixed(2).toString().replace(".", ",")}</span>
             <div className='checkout-item-remove' onClick={clearItem}>
-                &#10005;
+                <img className='checkout-remove-image' src={Remove} alt="" />
             </div>
         </div>
     )

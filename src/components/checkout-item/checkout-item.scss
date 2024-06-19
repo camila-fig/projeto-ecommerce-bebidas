@@ -40,5 +40,9 @@
     .checkout-item-remove {
         width: 20%;
         cursor: pointer;
+
+        .checkout-remove-image {
+            width: 10%;
+        }
     }
 }
