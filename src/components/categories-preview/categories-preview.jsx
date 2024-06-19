@@ -2,11 +2,8 @@ import { useContext } from "react"
 import { CategoryPreview } from "../category-preview/category-preview"
 import { CategoriesContext } from "../../context/categoriesContext"
 
-
-
 export function CategoriesPreview() {
- const { categoriesMap } = useContext(CategoriesContext)
- 
+  const { categoriesMap } = useContext(CategoriesContext)
 
   return (
     <>
