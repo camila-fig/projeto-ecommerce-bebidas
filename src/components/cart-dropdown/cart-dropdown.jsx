@@ -39,7 +39,7 @@ if (!cartCount) {
                 }
             </div>
             <div >
-                <Button onClick={goToCheckout}>Finalizar</Button>
+                <Button onClick={goToCheckout}>Verificar pedido</Button>
             </div>
         </div>
     )}
