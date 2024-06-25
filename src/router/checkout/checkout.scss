@@ -1,31 +1,34 @@
-.checkout-container {
-    background-color: rgb(245, 245, 245);
-    padding: 20px 50px 0 50px;
+.checkout-total {
+    padding-top: 15px;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 100px;
 
-    .checkout-header {
-        justify-content: space-around;
-        padding: 15px;
-        background-color: white;
+    .btn-logar {
+        cursor: pointer;
         display: flex;
-        gap: 110px;
-    }
+        flex-direction: row;
+        text-transform: uppercase;
+        justify-content: center;
+        padding: 2px;
+        font-weight: 800;
+        font-size: 13px;
+        width: 100%;
+        background-color: #ffaa50;
+        color: white;
+        border: solid 1px #ffaa50;
+        border-radius: 5px;
+        padding: 10px;
 
-    .checkout-container-total {
-        border-top: solid 1px lightgray;
-
-        .checkout-total {
-            padding-top: 15px;
-            height: 70px;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            gap: 100px;
-
-            .checkout-total-value {
-                font-weight: 600;
-                font-size: 25px;
-            }
+        &:hover {
+            background-color: #eb861c;
         }
     }
 
+    .checkout-total-value {
+        font-weight: 600;
+        font-size: 25px;
+    }
 }
