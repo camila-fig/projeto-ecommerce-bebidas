@@ -1,34 +1,41 @@
-.checkout-total {
-    padding-top: 15px;
-    height: 70px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 100px;
+.checkout-total-container {
+    background-color: rgb(245, 245, 245);
+    padding: 20px 50px 0 50px;
 
-    .btn-logar {
-        cursor: pointer;
+    .checkout-total {
+        padding-top: 15px;
+        height: 70px;
         display: flex;
         flex-direction: row;
-        text-transform: uppercase;
         justify-content: center;
-        padding: 2px;
-        font-weight: 800;
-        font-size: 13px;
-        width: 100%;
-        background-color: #ffaa50;
-        color: white;
-        border: solid 1px #ffaa50;
-        border-radius: 5px;
-        padding: 10px;
+        gap: 100px;
+       
+        background-color: white;
 
-        &:hover {
-            background-color: #eb861c;
+        .btn-logar {
+            cursor: pointer;
+            display: flex;
+            flex-direction: row;
+            text-transform: uppercase;
+            justify-content: center;
+            padding: 2px;
+            font-weight: 800;
+            font-size: 13px;
+            width: 100%;
+            background-color: #ffaa50;
+            color: white;
+            border: solid 1px #ffaa50;
+            border-radius: 5px;
+            padding: 10px;
+
+            &:hover {
+                background-color: #eb861c;
+            }
         }
-    }
 
-    .checkout-total-value {
-        font-weight: 600;
-        font-size: 25px;
+        .checkout-total-value {
+            font-weight: 600;
+            font-size: 25px;
+        }
     }
 }

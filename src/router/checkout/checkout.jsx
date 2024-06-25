@@ -14,28 +14,32 @@ export function Checkout() {
 
     if (!currentUser) {
         return (
-        <>
-            <CheckoutPreview />
-            <div className='checkout-total'>
-                <NavLink to='/auth'>
-                    <div className='btn-logar'>entre na sua conta para finalizar o pedido ou cadastre-se</div>
-                </NavLink>
-                <span className='checkout-total-value'> TOTAL: R$ {cartTotal.toFixed(2).toString().replace(".", ",")}</span >
-            </div>
-            <Footer />
-        </>
+            <>
+                <CheckoutPreview />
+                <div className='checkout-total-container'>
+                    <div className='checkout-total'>
+                        <NavLink to='/auth'>
+                            <div className='btn-logar'>entre na sua conta para finalizar o pedido ou cadastre-se</div>
+                        </NavLink>
+                        <span className='checkout-total-value'> TOTAL: R$ {cartTotal.toFixed(2).toString().replace(".", ",")}</span >
+                    </div>
+                    <Footer />
+                </div>
+            </>
         )
     } else {
         return (
             <>
                 <CheckoutPreview />
-                <div className='checkout-total'>
-                    <div>
-                        <Button type="button" typeButton="checkout">pagamento</Button>
+                <div className='checkout-total-container'>
+                    <div className='checkout-total'>
+                        <div>
+                            <Button type="button" typeButton="checkout">pagamento</Button>
+                        </div>
+                        <span className='checkout-total-value'> TOTAL: R$ {cartTotal.toFixed(2).toString().replace(".", ",")}</span >
                     </div>
-                    <span className='checkout-total-value'> TOTAL: R$ {cartTotal.toFixed(2).toString().replace(".", ",")}</span >
+                    <Footer />
                 </div>
-                <Footer />
             </>
         )
     }
