@@ -53,8 +53,8 @@ export function Navigation() {
                 {
                     currentUser ? (
                         <NavLink className="icon-container" onClick={signOutAuthUser}>
-                            <img className='nav-icon' src={nav_logout} alt="" />
                             <div className="nav-link">Sair</div>
+                            <img className='nav-icon' src={nav_logout} alt="" />
                         </NavLink>
                     ) : (
                         <NavLink to='/auth' className="icon-container">
