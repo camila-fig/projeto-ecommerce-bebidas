@@ -12,10 +12,10 @@ export function Checkout() {
     const { cartTotal } = useContext(CartContext)
     const { currentUser } = useContext(UserContext)
 
-    if (!currentUser) {
-        return (
-            <>
-                <CheckoutPreview />
+    return (
+        <>
+            <CheckoutPreview />
+            {!currentUser &&
                 <div className='checkout-total-container'>
                     <div className='checkout-total'>
                         <NavLink to='/auth'>
@@ -23,14 +23,9 @@ export function Checkout() {
                         </NavLink>
                         <span className='checkout-total-value'> TOTAL: R$ {cartTotal.toFixed(2).toString().replace(".", ",")}</span >
                     </div>
-                    <Footer />
-                </div>
-            </>
-        )
-    } else {
-        return (
-            <>
-                <CheckoutPreview />
+                </div>}
+
+            {currentUser &&
                 <div className='checkout-total-container'>
                     <div className='checkout-total'>
                         <div>
@@ -38,9 +33,8 @@ export function Checkout() {
                         </div>
                         <span className='checkout-total-value'> TOTAL: R$ {cartTotal.toFixed(2).toString().replace(".", ",")}</span >
                     </div>
-                    <Footer />
-                </div>
-            </>
-        )
-    }
+                </div>}
+            <Footer />
+        </>
+    )
 }
