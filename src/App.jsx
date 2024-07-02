@@ -21,6 +21,9 @@ export function App() {
           <Route path='checkout' element={<Checkout />} />
           <Route path='admin' element={<Admin />} />
         </Route>
+        {/* <Route path='/admin'>
+          <Route path='login' element={<Admin />} />
+        </Route> */}
       </Routes>
     </>
   )
