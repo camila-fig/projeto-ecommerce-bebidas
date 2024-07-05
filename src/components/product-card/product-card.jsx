@@ -6,7 +6,7 @@ import { CartContext } from '../../context/cartContext'
 
 export function ProductCard({ product }) {
 
-  const { name, price, promotionPrice, image } = product
+  const { name, price, promotionPrice, image, stock } = product
   const { addItemToCart } = useContext(CartContext)
 
   const addProductToCart = () => addItemToCart(product)
@@ -20,8 +20,11 @@ export function ProductCard({ product }) {
         <p className='product-promotion-price'>Por R$ {promotionPrice.toFixed(2).toString().replace(".", ",")}</p>
       </div>
       <div className="product-buttons">
-      <ItemCount />
-      <Button typeButton="inverted" onClick={addProductToCart}>Comprar</Button>
+        <ItemCount />
+        <Button typeButton="inverted" onClick={addProductToCart}>Comprar</Button>
+      </div>
+      <div className='product-stock-container'>
+        <p className='product-stock'>Estoque: {stock} unid.</p>
       </div>
     </div>
   )
