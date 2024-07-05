@@ -9,7 +9,7 @@ export const SHOP_DATA = [
                 price: 116.20,
                 promotionPrice: 89.90,
                 classification: 'Wisky',
-                stock: 33
+                stock: 3
             },
             {
                 id: 2,
