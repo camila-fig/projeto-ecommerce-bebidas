@@ -7,8 +7,7 @@ import { SHOP_DATA } from "../../shop-data"
 export function CategoriesPreview() {
   const { categoriesMap } = useContext(CategoriesContext)
 
-
-  //Salva/atualiza o banco de dados do Firebase conforme meu arquivo shop-data
+//Salva/atualiza o banco de dados do Firebase conforme meu arquivo shop-data
 // useEffect(() => {
 //   addCollentionAdDocuments('categories', SHOP_DATA)
 // },[])
