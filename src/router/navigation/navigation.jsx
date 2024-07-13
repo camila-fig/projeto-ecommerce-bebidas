@@ -3,7 +3,6 @@ import logo from '../../assets/cheers-logo.svg'
 import nav_favorite from '../../assets/heart-bold.svg'
 import nav_login from '../../assets/sign-in-bold.svg'
 import nav_logout from '../../assets/sign-out-bold.svg'
-import nav_search from '../../assets/magnifying-glass-bold.svg'
 import { CartIcon } from '../../components/cart-icon/cart-icon'
 import { NavLink, Outlet } from 'react-router-dom'
 import { Categories } from '../../components/categories/categories'
@@ -12,6 +11,7 @@ import { useContext } from 'react'
 import { CartContext } from '../../context/cartContext'
 import { UserContext } from '../../context/userContext'
 import { signOutAuthUser } from '../../utils/firebase'
+import { Search } from '../../components/search/search'
 
 const categories = [
     {
@@ -43,8 +43,7 @@ export function Navigation() {
                     <p className="celebrar-subtitle">Casa de Bebidas</p>
                 </NavLink>
                 <div className='nav-search'>
-                    <input className='nav-search-text' type="search" placeholder='o que está buscando hoje?' />
-                    <img className='nav-icon-search' src={nav_search} alt="" />
+                    <Search />
                 </div>
                 <NavLink to='/favorite' className="icon-container">
                     <img className='nav-icon' src={nav_favorite} alt="" />
