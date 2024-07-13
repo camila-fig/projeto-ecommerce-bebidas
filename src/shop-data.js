@@ -9,6 +9,7 @@ export const SHOP_DATA = [
                 price: 116.20,
                 promotionPrice: 89.90,
                 classification: 'Wisky',
+                description: 'É um Blend Scotch Whisky rico e incorporado. Tem uma seleção inigualável de mais de 35 maltes na sua composição que garantem a sua superioridade. Com aroma doce amadeirado, cravo-da-índia, doce de manteiga e sabor rico com mel. A marca Johnnie Walker existe desde 1920 e hoje é o whisky escocês mais vendido no mundo.',
                 stock: 3
             },
             {
@@ -18,6 +19,7 @@ export const SHOP_DATA = [
                 price: 148.52,
                 promotionPrice: 112.95,
                 classification: 'Bitter',
+                desciption: 'Jägermeister é composto de 56 ervas, frutas e raízes que a tornam uma bebida única, exótica e versátil, podendo ser consumido puro bem gelado, acompanhando sua cerveja ou outra de sua preferência.',
                 stock: 20
             },
             {
