@@ -1,27 +1,36 @@
 .nav-search {
     width: 350px;
-    padding: 2px;
     background-color: white;
     border: 1px #47515b solid;
     border-radius: 10px;
     display: flex;
     justify-content: center;
 
-    .search-text {
-        width: 300px;
-        border: none;
-    }
+    .search-container {
+        height: 30px;
+        display: flex;
+        align-items: center;
 
-    input::placeholder {
-        color: lightgray;
-    }
+        .search-text {
+            width: 300px;
+            border: none;
+        }
 
-    .search-icon {
-        width: 25px;
+        input::placeholder {
+            color: lightgray;
+        }
+
+        .search-icon {
+            width: 25px;
+        }
     }
 
     .search-results {
-        font-size: 13px;
-        padding-top: 5px;
+        width: 325px;
+        font-size: 12px;
+  
+        position: absolute;
+        margin-top: 1px;
+        background-color: white;
     }
 }
