@@ -5,8 +5,8 @@ import { Navigation } from './router/navigation/navigation'
 import { Shop } from './router/shop/shop'
 import { Home } from './router/home/home'
 import { Checkout } from './router/checkout/checkout'
-import { Product } from './router/product/product'
 import { Admin } from './router/admin'
+import { ProductPreview } from './components/product-preview/product-preview'
 
 
 export function App() {
@@ -17,7 +17,7 @@ export function App() {
           <Route index element={<Home />} />
           <Route path='shop/*' element={<Shop />} />
           <Route path='auth' element={<Auth />} />
-          <Route path='product' element={<Product />} />
+          <Route path='product-detail/:id' element={<ProductPreview />} />
           <Route path='checkout' element={<Checkout />} />
           <Route path='admin' element={<Admin />} />
         </Route>
