@@ -2,7 +2,7 @@
 ![image](https://github.com/user-attachments/assets/fe780345-86be-43b8-9e9e-ef268c7d925d)
 
 ## Descrição:
-Este é um projeto de um e-commerce desenvolvido com React.js, Vite e SASS. Na página inicial são apresentadas algumas bebidas que estão a venda, sendo possível inseri-las ao carrinho. Na barra de pesquisa, é possível encontrar um rótulo inserindo uma palavra-chave. Ainda no cabeçalho da página inicial, é possível clicar em "Entrar" para ser direcionado a página de login. O login pode ser feito a partir de um novo cadastro, usando um e-mail já cadastrado ou através de uma conta do Google. O carrinho pode ser visualizado detalhadamente clicando sobre sua imagem e após em "verificar pedido", o qual direciona a outra página que mostra os detalhes da compra.
+Este é um projeto de um e-commerce desenvolvido com React.js, Vite e SCSS. Na página inicial são apresentadas algumas bebidas que estão a venda, sendo possível inseri-las ao carrinho. Na barra de pesquisa, é possível encontrar um rótulo inserindo uma palavra-chave. Ainda no cabeçalho da página inicial, é possível clicar em "Entrar" para ser direcionado a página de login. O login pode ser feito a partir de um novo cadastro, usando um e-mail já cadastrado ou através de uma conta do Google. O carrinho pode ser visualizado detalhadamente clicando sobre sua imagem e após em "verificar pedido", o qual direciona a outra página que mostra os detalhes da compra.
 
 ## Tecnologias usadas:
 - React.js
