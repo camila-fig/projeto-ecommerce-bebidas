@@ -9,7 +9,7 @@ Este é um projeto de um e-commerce desenvolvido com React.js, Vite e SASS. Na p
 - Vite
 - Html
 - JavaScript
-- SASS
+- SCSS
 - Git e GitHub
 - Firebase
 - Vercel
